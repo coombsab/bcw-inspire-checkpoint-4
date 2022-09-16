@@ -1,0 +1,54 @@
+/* BASIC STYLES HERE */
+:root {
+  --body-bg: rgb(56, 2, 56);
+  --bg-transparent: rgba(0, 0, 0, 0.404);
+  --text-off-white: rgb(241, 231, 231);
+  --text-vis-bold: 700;
+}
+body {
+  background-color: var(--body-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+p {
+  margin: 0;
+}
+
+.card-transparent {
+  background-color: var(--bg-transparent);
+  backdrop-filter: blur(7.5px);
+}
+
+.text-visible {
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.644), 0px 0px 5px rgba(255, 166, 0, 0.678);
+  /* text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+  color: var(--text-off-white);
+  font-weight: var(--text-vis-bold);
+  letter-spacing: 0.035rem;
+
+}
+
+.grid-center {
+  display: grid;
+  place-content: center;
+}
+
+.time {
+  font-size: 64px;
+  font-weight: 600;
+  letter-spacing: 0.075rem;
+}
+
+.time:hover {
+  cursor: pointer;
+}
+
+.card-weather:hover {
+  cursor: pointer;
+}
+
+#weather-icon {
+  height: 3rem;
+}
