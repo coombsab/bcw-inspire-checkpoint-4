@@ -7,7 +7,7 @@ function _drawQuote() {
   if (!appState.quote) {
     return
   }
-  setText("author", appState.quote.author)
+  setText("author", "By " + appState.quote.author)
   setText("quote", '"' + appState.quote.content + '"')
 }
 export class QuotesController {

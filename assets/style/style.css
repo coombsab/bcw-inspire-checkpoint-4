@@ -49,6 +49,30 @@ p {
   cursor: pointer;
 }
 
+.todo-list-toggle:hover {
+  cursor: pointer;
+}
+
+.todo-item:hover {
+  background-color: rgba(255, 166, 0, 0.678);
+}
+
 #weather-icon {
   height: 3rem;
+}
+
+input[type=checkbox]:checked + p {
+  color:rgb(175, 130, 53);
+  text-decoration: line-through;
+  
+}
+
+input[type=checkbox] + p {
+  font-size: 12px;
+}
+
+@media (min-width: 768px) {
+  .author-quote {
+    width: 50%;
+  }
 }

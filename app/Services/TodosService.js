@@ -24,13 +24,42 @@ class TodosService {
     appState.todoList = appState.todoList.filter(todo => todo.id !== id)
   }
   async toggleTodo(id) {
-    const updatedTodo = appState.todoList.find(todo => todo.id = id)
+    const updatedTodo = appState.todoList.find(todo => todo.id === id)
     if (!updatedTodo) {
       throw new Error ("Invalid ID")
     }
     updatedTodo.completed = !updatedTodo.completed
     const response = await sandboxServer.put("abraham/todos/" + id, updatedTodo)
     appState.emit("todoList")
+  }
+
+
+  // TODO figure out better way to toggle/collapse todo list
+  toggleTodoList() {
+    const todoListElem = document.getElementById("todo-list")
+    if (!appState.isTodoListToggled) {
+      // @ts-ignore
+      todoListElem.style.height = 0
+      // @ts-ignore
+      todoListElem.style.overflow = "hidden"
+    } else {
+      // @ts-ignore
+      todoListElem.style.height = "auto"
+      // @ts-ignore
+      todoListElem.style.overflow = "auto"
+    }
+
+    appState.isTodoListToggled = !appState.isTodoListToggled
+  }
+
+  updateTodoCount() {
+    let count = 0
+    appState.todoList.forEach(todo => {
+      if (!todo.completed) {
+        count++
+      }
+    })
+    appState.todoRemaining = count
   }
 }
 

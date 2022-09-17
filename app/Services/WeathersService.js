@@ -19,7 +19,6 @@ class WeathersService {
 
     }
     appState.currentTempFormat = appState.tempFormats[appState.currentTempFormatIndex]
-    saveState("currentTempFormat", appState.currentTempFormat)
   }
   async getWeather() {
     const response = await sandboxServer.get("weather")
@@ -28,8 +27,7 @@ class WeathersService {
     // console.log(appState.weather)
 
     if (!appState.currentTempFormat) {
-      appState.currentTempFormat = "fahrenheit"
-      saveState("currentTempFormat", appState.currentTempFormat)
+      appState.currentTempFormat = appState.tempFormats[appState.currentTempFormatIndex]
     }
   }
 }

@@ -20,8 +20,12 @@ class AppState extends EventEmitter {
   // TODO Get load/save for temp format to work properly
   tempFormats = ["celcius", "kelvin", "fahrenheit"]
   currentTempFormatIndex = 2
-  // currentTempFormat = loadState("currentTempFormat")
   currentTempFormat
+
+  isTodoListToggled = false
+
+  todoRemaining = 0
+
 }
 
 export const appState = new Proxy(new AppState(), {
