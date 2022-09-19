@@ -17,11 +17,16 @@ class AppState extends EventEmitter {
   /** @type {import('./Models/Time').Time | null} */
   time = loadState("time", Time)
 
-  // TODO Get load/save for temp format to work properly
   tempFormats = ["celcius", "kelvin", "fahrenheit"]
-  currentTempFormatIndex = 2
-  currentTempFormat
-
+  currentTempFormatIndex = !window.localStorage.getItem("tempIndex") ? 2 : window.localStorage.getItem("tempIndex")
+  // currentTempFormatIndex = 2
+  
+  // currentTempFormat = loadState("tempFormat")
+  currentTempFormat = window.localStorage.getItem("tempFormat")
+  // currentTempFormat
+  
+  // TODO get todo list to stay collapsed (or not) on page load (local storage)
+  // isTodoListToggled = !window.localStorage.getItem("isToggled") ? false : window.localStorage.getItem("isToggled")
   isTodoListToggled = false
 
   todoRemaining = 0

@@ -3,7 +3,7 @@ export class Todo {
     this.id = data.id
     this.description = data.description
     this.completed = data.completed || false
-    console.log(`todo-item-${this.id}`)
+    // console.log(`todo-item-${this.id}`)
   }
 
   get ListTemplate() {

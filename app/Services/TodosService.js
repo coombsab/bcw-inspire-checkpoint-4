@@ -1,5 +1,6 @@
 import { appState } from "../AppState.js"
 import { Todo } from "../Models/Todo.js"
+import { saveState } from "../Utils/Store.js"
 import { sandboxServer } from "./AxiosService.js"
 
 class TodosService {
@@ -50,6 +51,7 @@ class TodosService {
     }
 
     appState.isTodoListToggled = !appState.isTodoListToggled
+    saveState("isToggled", appState.isTodoListToggled)
   }
 
   updateTodoCount() {
