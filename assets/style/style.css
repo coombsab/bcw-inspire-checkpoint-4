@@ -60,9 +60,9 @@ p {
   margin-bottom: 2rem;
 }
 
-.todo-input {
+/* .todo-input {
   width: 80%;
-}
+} */
 
 .todo-list-toggle:hover {
   cursor: pointer;
