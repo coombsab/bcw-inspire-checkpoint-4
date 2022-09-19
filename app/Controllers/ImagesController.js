@@ -8,7 +8,7 @@ function _drawImage() {
     return
   }
   // @ts-ignore
-  document.querySelector("body").style.backgroundImage = `url(${appState.image.imgUrl})`
+  document.querySelector("body").style.backgroundImage = `url(${appState.image.largeImgUrl})`
   setText("copyright", appState.image.author)
 }
 export class ImagesController {
