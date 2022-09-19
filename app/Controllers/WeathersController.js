@@ -25,13 +25,13 @@ function _drawTemp() {
   const weather = appState.weather
   switch(appState.currentTempFormat) {
     case "celcius":
-      setText("temp", weather.tempC + "° C")
+      setText("temp", weather.Celcius + "° C")
       break
     case "kelvin":
-      setText("temp", weather.tempK + " K")
+      setText("temp", weather.Kelvin + " K")
       break
     default:
-      setText("temp", weather.tempF + "° F")
+      setText("temp", weather.Fahrenheit + "° F")
       break
   }
 }

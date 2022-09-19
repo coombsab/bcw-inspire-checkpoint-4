@@ -2,24 +2,20 @@ import { appState } from "../AppState.js"
 
 export class Weather {
   constructor(data) {
-    this.tempK = data.main.temp
-    this.tempC = (this.tempK - 273.15).toFixed(2)
-    this.tempF = (parseInt(this.tempC) * (9/5) + 32).toFixed(2)
+    this.temp = data.main.temp
     this.weather = data.weather[0].main
     this.icon = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
-    this.tempsByFormat = [
-      {
-        name: "kelvin",
-        temp: this.tempK
-      },
-      {
-        name: "celcius",
-        temp: this.tempC
-      },
-      {
-        name: "fahrenheit",
-        temp: this.tempF
-      }
-    ]
+  }
+
+  get Kelvin () {
+    return Math.round(this.temp)
+  }
+
+  get Celcius () {
+    return Math.round(this.temp - 273.15)
+  }
+
+  get Fahrenheit () {
+    return Math.round(this.Celcius * (9/5) + 32)
   }
 }

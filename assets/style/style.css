@@ -89,13 +89,6 @@ input[type=checkbox] + p {
 }
 
 @media (min-width: 768px) {
-  .card-weather {
-    width: 6vw;
-    height: 15vh;
-    background-color: var(--bg-transparent);
-    backdrop-filter: blur(7.5px);
-  }
-
   .time {
     font-size: 64px;
     font-weight: 600;
@@ -128,13 +121,6 @@ input[type=checkbox] + p {
     width: 35%;
     margin-bottom: 2rem;
     font-size: 20px;
-  }
-
-  .card-weather {
-    width: 8vw;
-    height: 16vh;
-    background-color: var(--bg-transparent);
-    backdrop-filter: blur(7.5px);
   }
 
   .card-transparent {
