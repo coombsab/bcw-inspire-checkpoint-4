@@ -10,16 +10,15 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  /* adding stuff for fixed todo list */
+  position: relative;
 }
 
 p {
   margin: 0;
 }
 
-.card-transparent {
-  background-color: var(--bg-transparent);
-  backdrop-filter: blur(7.5px);
-}
+
 
 .text-visible {
   text-shadow: 1px 1px rgba(0, 0, 0, 0.644), 0px 0px 5px rgba(255, 166, 0, 0.678);
@@ -35,15 +34,12 @@ p {
   place-content: center;
 }
 
-.time {
-  font-size: 64px;
-  font-weight: 600;
-  letter-spacing: 0.075rem;
-}
+
 
 .time:hover {
   cursor: pointer;
 }
+
 
 .card-weather:hover {
   cursor: pointer;
@@ -71,8 +67,59 @@ input[type=checkbox] + p {
   font-size: 12px;
 }
 
+.card-weather {
+  background-color: var(--bg-transparent);
+  backdrop-filter: blur(7.5px);
+}
+
+.card-transparent {
+  background-color: var(--bg-transparent);
+  backdrop-filter: blur(7.5px);
+  padding: 1rem;
+}
+
+.time {
+  font-size: 50px;
+  font-weight: 600;
+  letter-spacing: 0.075rem;
+}
+
+.author-quote {
+  margin-bottom: 2rem;
+}
+
 @media (min-width: 768px) {
   .author-quote {
-    width: 50%;
+    width: 40%;
+    margin-bottom: 2rem;
+    font-size: 20px;
+  }
+  
+  .card-weather {
+    width: 6vw;
+    height: 15vh;
+    background-color: var(--bg-transparent);
+    backdrop-filter: blur(7.5px);
+  }
+
+  .card-transparent {
+    background-color: var(--bg-transparent);
+    backdrop-filter: blur(7.5px);
+    /* adding stuff for fixed todo list */
+    width: 25vw;
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+    max-height: 61vh;
+  }
+
+  #todo-list {
+    overflow: auto;
+  }
+
+  .time {
+    font-size: 64px;
+    font-weight: 600;
+    letter-spacing: 0.075rem;
   }
 }
