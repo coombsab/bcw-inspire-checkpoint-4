@@ -16,7 +16,7 @@ class TodosService {
   async addTodo(formData) {
     const response = await sandboxServer.post("abraham/todos", formData)
     // console.log(response.data)
-    appState.todoList = [...appState.todoList, new Todo(response.data)]
+    appState.todoList = [new Todo(response.data), ...appState.todoList]
     // console.log(appState.todoList)
   }
 
